@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TexturePacker", "TexturePacker", "{0143D487-3C99-4677-BEDC-9CA312DCA894}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{CC16101E-F7EE-4DD4-97F4-AA008D9C65BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{921965A1-8118-4214-B913-4774754207DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xngine.Tools.Commons", "src\Commons\Xngine.Tools.Commons\Xngine.Tools.Commons.csproj", "{8CA3C010-25D9-4982-AEA4-CFA121D988A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xngine.Tools.Tests", "src\Tests\Xngine.Tools.Tests\Xngine.Tools.Tests.csproj", "{3E2CBB34-A13A-43F7-B796-45CE78E6A2FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xngine.Packer.Model", "src\TexturePacker\Xngine.Packer.Model\Xngine.Packer.Model.csproj", "{4DF6B72D-369C-4FEB-A09C-C25731E0292F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xngine.TexturePacker.Cmd", "src\TexturePacker\Xngine.TexturePacker.Console\Xngine.TexturePacker.Cmd.csproj", "{165C508C-7D0A-417C-B2C4-01336C0F3A75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CA3C010-25D9-4982-AEA4-CFA121D988A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA3C010-25D9-4982-AEA4-CFA121D988A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA3C010-25D9-4982-AEA4-CFA121D988A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA3C010-25D9-4982-AEA4-CFA121D988A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2CBB34-A13A-43F7-B796-45CE78E6A2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2CBB34-A13A-43F7-B796-45CE78E6A2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2CBB34-A13A-43F7-B796-45CE78E6A2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2CBB34-A13A-43F7-B796-45CE78E6A2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF6B72D-369C-4FEB-A09C-C25731E0292F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF6B72D-369C-4FEB-A09C-C25731E0292F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF6B72D-369C-4FEB-A09C-C25731E0292F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF6B72D-369C-4FEB-A09C-C25731E0292F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165C508C-7D0A-417C-B2C4-01336C0F3A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165C508C-7D0A-417C-B2C4-01336C0F3A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165C508C-7D0A-417C-B2C4-01336C0F3A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165C508C-7D0A-417C-B2C4-01336C0F3A75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8CA3C010-25D9-4982-AEA4-CFA121D988A4} = {CC16101E-F7EE-4DD4-97F4-AA008D9C65BA}
+		{3E2CBB34-A13A-43F7-B796-45CE78E6A2FA} = {921965A1-8118-4214-B913-4774754207DD}
+		{4DF6B72D-369C-4FEB-A09C-C25731E0292F} = {0143D487-3C99-4677-BEDC-9CA312DCA894}
+		{165C508C-7D0A-417C-B2C4-01336C0F3A75} = {0143D487-3C99-4677-BEDC-9CA312DCA894}
+	EndGlobalSection
+EndGlobal
