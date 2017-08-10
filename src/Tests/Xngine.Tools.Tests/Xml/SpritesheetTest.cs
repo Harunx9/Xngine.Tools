@@ -32,5 +32,19 @@ namespace Xngine.Tools.Tests.Xml
 
             result.Should().Be(SERIALIZED_XML_SPRITESHEET);
         }
+
+        [Fact]
+        public void deserialized_spritesheet_should_have_valid_schema()
+        {
+            var serializer = new XmlSerializer();
+
+            var result = serializer.Deserialize<SpriteSheet>(SERIALIZED_XML_SPRITESHEET);
+
+            result.Items.Count.Should().Be(4);
+            result.Items[0].Name.Should().Be("Anim_1");
+            result.Items[1].Name.Should().Be("Anim_2");
+            result.Items[2].Name.Should().Be("Anim_3");
+            result.Items[3].Name.Should().Be("Anim_4");
+        }
     }
 }

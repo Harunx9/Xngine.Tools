@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Xngine.Packer.Model.SerializableEntities
 {
@@ -20,7 +21,86 @@ namespace Xngine.Packer.Model.SerializableEntities
     //    </animation>
     //</animations>
 
-    class AnitationSpriteSheet
+    [XmlRoot("animations")]
+    public class AnitationSpriteSheet
     {
+        [XmlElement("animation")]
+        public List<Animation> Animations { get; set; }
+
+        public AnitationSpriteSheet()
+        {
+            Animations = new List<Animation>();
+        }
+
+        public AnitationSpriteSheet Add(Animation animation)
+        {
+            Animations.Add(animation);
+            return this;
+        }
+    }
+
+    public class Animation
+    {
+        [XmlElement("frame")]
+        public List<Frame> Frames { get; set; }
+
+        [XmlAttribute("name")]
+        public string Name { get; set; }
+
+        [XmlAttribute("framesPerSecond")]
+        public int FramesPerSecond { get; set; }
+
+        private Animation(){}
+
+        public Animation(string name, int framesPerSecond)
+        {
+            Name = name;
+            FramesPerSecond = framesPerSecond;
+            Frames = new List<Frame>();
+        }
+
+        public Animation Add(Frame frame)
+        {
+            Frames.Add(frame);
+            return this;
+        }
+    }
+
+    public class Frame
+    {
+        [XmlAttribute("number")]
+        public int Number { get; set; }
+
+        [XmlAttribute("x")]
+        public int X { get; set; }
+
+        [XmlAttribute("y")]
+        public int Y { get; set; }
+
+        [XmlAttribute("width")]
+        public int Width { get; set; }
+
+        [XmlAttribute("height")]
+        public int Height { get; set; }
+
+        [XmlAttribute("offsetx")]
+        public int OffsetX { get; set; }
+
+        [XmlAttribute("offsety")]
+        public int OffsetY { get; set; }
+
+        private Frame(){}
+
+        public Frame(int number, int x, int y, int width, int height, int offsetX, int offsetY)
+        {
+            Number = number;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+            OffsetX = offsetX;
+            OffsetY = offsetY;
+        }
+
     }
 }
