@@ -1,5 +1,4 @@
 ﻿using ImageSharp;
-using ImageSharp.PixelFormats;
 using SixLabors.Primitives;
 using System;
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Xngine.Tools.Commons.Images
+﻿namespace Xngine.Tools.Commons.Images
 {
     public interface IImage
     {
