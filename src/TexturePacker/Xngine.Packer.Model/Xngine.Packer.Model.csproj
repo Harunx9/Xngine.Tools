@@ -8,4 +8,8 @@
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Commons\Xngine.Tools.Commons\Xngine.Tools.Commons.csproj" />
+  </ItemGroup>
+
 </Project>
