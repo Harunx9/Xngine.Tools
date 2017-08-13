@@ -1,40 +1,15 @@
-using Xngine.Packer.Model.SerializableEntities;
+﻿using Xngine.Packer.Model.SerializableEntities;
 using Xunit;
 using FluentAssertions;
-using Xngine.Tools.Commons.Xml;
 using Xngine.Tools.Tests.BaseFramework;
 
-namespace Xngine.Tools.Tests.Xml
+namespace Xngine.Tools.Tests.Xml.Spritesheet
 {
-    public class on_spitesheet_serialize : SpritesheetTestBase
-    {
-        private SpriteSheet spritesheet;
-        private string result;
-
-        protected override void Arrange()
-        {
-            spritesheet = new SpriteSheet();
-            spritesheet.Add(new Item("Anim_1", 0, 0, 50, 50, 0, 0))
-                .Add(new Item("Anim_2", 0, 50, 50, 50, 0, 0))
-                .Add(new Item("Anim_3", 50, 0, 50, 50, 0, 0))
-                .Add(new Item("Anim_4", 50, 50, 50, 50, 0, 0));
-
-            serializer = new XmlSerializer();
-        }
-
-        protected override void Act()
-            => result = serializer.SerializeToXmlString(spritesheet);
-
-        [Assert]
-        public void serialized_spritesheet_should_have_valid_schema()
-            => result.Should().Be(SERIALIZED_XML_SPRITESHEET);
-    }
-
     public class on_spitesheet_deserialize : SpritesheetTestBase
     {
         private SpriteSheet result;
 
-        protected override void Arrange() => serializer = new XmlSerializer();
+        protected override void Arrange() => serializer = new Xngine.Tools.Commons.Xml.XmlSerializer();
 
 
         protected override void Act()
@@ -88,18 +63,5 @@ namespace Xngine.Tools.Tests.Xml
             elem.Width.Should().Be(50);
             elem.Height.Should().Be(50);
         }
-    }
-
-    public abstract class SpritesheetTestBase : AAATest
-    {
-        protected XmlSerializer serializer;
-        protected const string SERIALIZED_XML_SPRITESHEET =
-    "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n" +
-    "<spritesheet>\r\n" +
-    "  <item name=\"Anim_1\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" offsetx=\"0\" offsety=\"0\" />\r\n" +
-    "  <item name=\"Anim_2\" x=\"0\" y=\"50\" width=\"50\" height=\"50\" offsetx=\"0\" offsety=\"0\" />\r\n" +
-    "  <item name=\"Anim_3\" x=\"50\" y=\"0\" width=\"50\" height=\"50\" offsetx=\"0\" offsety=\"0\" />\r\n" +
-    "  <item name=\"Anim_4\" x=\"50\" y=\"50\" width=\"50\" height=\"50\" offsetx=\"0\" offsety=\"0\" />\r\n" +
-    "</spritesheet>";
     }
 }

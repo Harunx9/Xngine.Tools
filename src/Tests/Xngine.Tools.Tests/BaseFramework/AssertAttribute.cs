@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Linq;
+using System.Runtime.CompilerServices;
 using Xunit;
 
 namespace Xngine.Tools.Tests.BaseFramework
@@ -8,9 +9,16 @@ namespace Xngine.Tools.Tests.BaseFramework
         public AssertAttribute(
             string separatorReplacement = " ",
             string separator = "_",
+            [CallerFilePath] string classFile = "",
             [CallerMemberName] string methodName = "")
         {
-            DisplayName = methodName.Replace(separator, separatorReplacement);
+            var testClassName = classFile.Split('\\')
+                .Last()
+                .Split('.')
+                .First()
+                .Replace(separator, separatorReplacement);
+            var testMethodName = methodName.Replace(separator, separatorReplacement);
+            DisplayName = string.Concat(testClassName, " ", testMethodName);
         }
     }
 }
