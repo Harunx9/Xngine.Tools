@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
+using Xngine.Packer.Model.ImageProcessing;
 
 namespace Xngine.Packer.Model.SerializableEntities
 {
@@ -15,7 +16,7 @@ namespace Xngine.Packer.Model.SerializableEntities
     //    <item name="anim_8" x="0" y="0" width="50" height="50" offsetx="0" offsety="0"/>
     //</spritesheet>
 
-    [XmlRoot("spritesheet", Namespace ="")]
+    [XmlRoot("spritesheet")]
     public class SpriteSheet
     {
         [XmlElement("item")]

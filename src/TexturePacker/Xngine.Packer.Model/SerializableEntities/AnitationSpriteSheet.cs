@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
+using Xngine.Packer.Model.ImageProcessing;
 
 namespace Xngine.Packer.Model.SerializableEntities
 {
@@ -66,7 +65,7 @@ namespace Xngine.Packer.Model.SerializableEntities
         }
     }
 
-    public class Frame
+    public class Frame 
     {
         [XmlAttribute("number")]
         public int Number { get; set; }
