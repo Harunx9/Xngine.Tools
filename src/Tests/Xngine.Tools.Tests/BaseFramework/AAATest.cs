@@ -2,7 +2,7 @@
 
 namespace Xngine.Tools.Tests.BaseFramework
 {
-    //Base class for arrande act assert structute like test
+    //Base class for arrande act assert structure like test
     //Arrange method will prepare test data and any needed dependecy for test
     //Act will be execution of buisness logic 
     //Assert should be write with [Assert] attribute 
