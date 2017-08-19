@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xngine.TexturePacker.Cmd
+namespace Xngine.Packer.Cmd
 {
     class Program
     {
