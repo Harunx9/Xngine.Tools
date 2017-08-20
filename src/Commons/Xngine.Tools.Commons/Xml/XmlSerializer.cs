@@ -1,8 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using Xngine.Tools.Commons.Ioc;
 
 namespace Xngine.Tools.Commons.Xml
 {
@@ -13,6 +13,7 @@ namespace Xngine.Tools.Commons.Xml
         T Deserialize<T>(FileStream file) where T : class;
     }
 
+    [Dependency]
     public class XmlSerializer : IXmlSerializer
     {
         public T Deserialize<T>(string xmlString) where T : class

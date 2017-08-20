@@ -4,15 +4,17 @@ using System.IO;
 using System.Linq;
 using Xngine.Tools.Commons.Exceptions;
 using Xngine.Tools.Commons.Images;
+using Xngine.Tools.Commons.Ioc;
 
 namespace Xngine.Packer.Model.ImageProcessing
 {
     public interface IImageMerger
     {
         SpriteSheetConfig<TImage> MergeFor<TImage>(string inputPath, MergeOptions options) where TImage : class, IImage;
-        TImage MergeFor<TImage>(SpriteSheetConfig sheetConfig, string inputPath) where TImage : class, IImage;
+        SpriteSheetConfig<TImage> MergeFor<TImage>(SpriteSheetConfig sheetConfig, string inputPath) where TImage : class, IImage;
     }
 
+    [Dependency]
     public class ImageMerger : IImageMerger
     {
         private readonly IMegreWithConfigAlgorithm _configMergeAlgorithm;
@@ -47,7 +49,7 @@ namespace Xngine.Packer.Model.ImageProcessing
             return new SpriteSheetConfig<TImage>(sheetConfig, mergedImage);
         }
 
-        public TImage MergeFor<TImage>(SpriteSheetConfig sheetConfig, string inputPath) where TImage : class, IImage
+        public SpriteSheetConfig<TImage> MergeFor<TImage>(SpriteSheetConfig sheetConfig, string inputPath) where TImage : class, IImage
         {
             throw new NotImplementedException();
         }

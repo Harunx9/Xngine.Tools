@@ -12,4 +12,8 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.Image.Merging.on_image_merge_without_pre_configure")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.Image.Merging.on_image_merge_when_input_dir_not_exist")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.Image.Merging.on_same_image_merge_without_pre_configure_and_crop")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.Ioc.on_register_assembly_with_dependant_ones")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Potential Code Quality Issues", "RECS0021:Warns about calls to virtual member functions occuring in the constructor", Justification = "<Pending>", Scope = "member", Target = "~M:Xngine.Tools.Tests.BaseFramework.AAATest.#ctor")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.Image.Merging.on_same_image_merge_without_pre_configure_and_crop_and_options_width_greater_than_width_sum")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.Image.Merging.on_same_image_merge_without_pre_configure_and_crop_and_options_width_less_than_width_sum")]
 

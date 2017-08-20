@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Xngine.Tools.Commons.Images;
+using Xngine.Tools.Commons.Ioc;
 
 namespace Xngine.Packer.Model.ImageProcessing.ConfigCreator
 {
+    [Dependency]
     public class SameImagesWithoutCropConfigCreator : IConfigCreator
     {
 

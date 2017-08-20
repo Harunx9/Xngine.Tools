@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Xngine.Tools.Commons.Images;
+using Xngine.Tools.Commons.Ioc;
 
 namespace Xngine.Packer.Model.ImageProcessing
 {
@@ -8,6 +9,7 @@ namespace Xngine.Packer.Model.ImageProcessing
         TImage Merge<TImage>(SpriteSheetConfig config, IEnumerable<TImage> images) where TImage : class, IImage;
     }
 
+    [Dependency]
     public class MergeWithConfigurationAlgorithm : IMegreWithConfigAlgorithm
     {
         public TImage Merge<TImage>(SpriteSheetConfig config, IEnumerable<TImage> images) where TImage : class, IImage
