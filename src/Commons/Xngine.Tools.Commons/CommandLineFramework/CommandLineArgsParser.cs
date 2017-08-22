@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Xngine.Tools.Commons.CommandLineFramework.Exceptions;
 
 namespace Xngine.Tools.Commons.CommandLineFramework
 {
@@ -21,6 +22,9 @@ namespace Xngine.Tools.Commons.CommandLineFramework
 
         public CommandLineArgs Parse(string[] args)
         {
+            if (args.Any() == false)
+                throw new EmptyArgsException();
+
             string commandName = ParseCommandName(args);
             Dictionary<string, string> options = ParseCommandOptions(args);
 

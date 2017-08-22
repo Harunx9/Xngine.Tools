@@ -20,4 +20,5 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Parser.on_parse_equality_sign_delimited_values")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Parser.on_parse_space_delimited_values")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Parser.on_parse_mixed_delimiters")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Parser.on_parse_empty_args")]
 
