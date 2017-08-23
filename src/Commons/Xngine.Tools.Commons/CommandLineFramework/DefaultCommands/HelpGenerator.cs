@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using System.Text;
 using Xngine.Tools.Commons.CommandLineFramework.Attributes;
@@ -46,7 +45,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework.DefaultCommands
                 t.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Alias == commandName)));
 
             if (commands.Any() == false)
-                throw new CommandNotFoundException();
+                throw new CommandNotFoundException(commandName);
 
             if (commands.Count() > 1)
                 throw new TooManyCommandsWithSameNameException(commandName);
@@ -57,9 +56,9 @@ namespace Xngine.Tools.Commons.CommandLineFramework.DefaultCommands
             var commandAtt = command.GetTypeInfo().GetCustomAttribute<CommandAttribute>();
 
             helpBuilder = new StringBuilder();
-            helpBuilder.Append(commandAtt.HelpText);
-            helpBuilder.Append($"Command usage {commandAtt.Name} or {commandAtt.Alias} [<opts>]");
-            helpBuilder.Append($"Option list:");
+            helpBuilder.AppendLine(commandAtt.HelpText);
+            helpBuilder.AppendLine($"Command usage {commandAtt.Name} or {commandAtt.Alias} [<opts>]");
+            helpBuilder.AppendLine($"Option list:");
 
             var optionValuesProps = command.GetProperties()
                 .Where(x => x.GetCustomAttribute<CommandOptionsValueAttribute>() != null);
@@ -67,7 +66,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework.DefaultCommands
             foreach (var prop in optionValuesProps)
             {
                 var attribute = prop.GetCustomAttribute<CommandOptionsValueAttribute>();
-                var required = attribute.Required ? "Required" : "";
+                var required = attribute.Required ? "| Required |" : "";
 
                 helpBuilder.AppendLine($"    --{attribute.Name} | --{attribute.Alias} {required} {attribute.HelpText}");
             }

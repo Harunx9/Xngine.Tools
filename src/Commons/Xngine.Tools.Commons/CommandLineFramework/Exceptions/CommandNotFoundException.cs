@@ -3,7 +3,7 @@
 namespace Xngine.Tools.Commons.CommandLineFramework.Exceptions
 {
     [Serializable]
-    internal class CommandNotFoundException : Exception
+    public class CommandNotFoundException : Exception
     {
         public CommandNotFoundException()
         {

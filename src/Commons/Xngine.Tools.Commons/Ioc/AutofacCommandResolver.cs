@@ -21,8 +21,9 @@ namespace Xngine.Tools.Commons.Ioc
         {
             try
             {
-                var commandType = GetCommandType(args.CommandName);
-                return _container.ResolveNamed(args.CommandName, commandType) as IConsoleCommandHandler;
+                var commandName = GetQualifiedCommandName(args.CommandName);
+                var commandType = GetCommandType(commandName);
+                return _container.ResolveNamed(commandName, commandType) as IConsoleCommandHandler;
             }
             catch (Exception ex)
             {
@@ -30,9 +31,28 @@ namespace Xngine.Tools.Commons.Ioc
             }
         }
 
+
         public T ResolveCommandHandler<T>(string name)
         {
             return _container.ResolveNamed<T>(name);
+        }
+
+        private string GetQualifiedCommandName(string commandName)
+        {
+            var commandType = AssemblyFinder
+                .GetCurrentAssemblyWithDependencies()
+                .SelectMany(x => x.GetTypes()
+                    .Where(t => t.GetTypeInfo().GetCustomAttribute<CommandAttribute>() != null))
+                .FirstOrDefault(x =>
+                    x.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Name == commandName ||
+                    x.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Alias == commandName
+                );
+
+            string retName = string.Empty;
+            if (commandType != null)
+                retName = commandType.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Name;
+
+            return retName;
         }
 
         private Type GetCommandType(string name)

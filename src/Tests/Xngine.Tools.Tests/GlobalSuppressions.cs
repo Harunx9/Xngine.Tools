@@ -24,4 +24,8 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Factory.on_create_test_command")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Factory.on_create_test_command_with_default_value")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Parser.on_parse_empty_args")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.Factory.on_create_command_form_with_alias")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.CommandResolver.on_resolve_command_handler_from_alias")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.CommandResolver.on_resolve_command_handler_from_full_name")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "type", Target = "~T:Xngine.Tools.Tests.CommandlineFramework.CommandResolver.on_try_resolve_not_registerd_command")]
 

@@ -1,8 +1,8 @@
 ﻿using Xngine.Tools.Commons.CommandLineFramework.Attributes;
 
-namespace Xngine.Tools.Tests.CommandlineFramework.Factory
+namespace Xngine.Tools.Tests.CommandlineFramework
 {
-    [Command("test")]
+    [Command("test", Alias = "t")]
     public class TestCommand
     {
         [CommandOptionsValue("option1", DefaultValue = 32)]
@@ -11,7 +11,7 @@ namespace Xngine.Tools.Tests.CommandlineFramework.Factory
         [CommandOptionsValue("option2", Required = true)]
         public bool Boolean { get; set; }
 
-        [CommandOptionsValue("option3")]
+        [CommandOptionsValue("option3", Alias = "o3")]
         public string Text { get; set; }
     }
 }

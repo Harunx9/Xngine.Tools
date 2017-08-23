@@ -3,7 +3,7 @@
 namespace Xngine.Tools.Commons.CommandLineFramework.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-    sealed class CommandHandlerAttribute : Attribute
+    public sealed class CommandHandlerAttribute : Attribute
     {
         public string CommandName { get; }
 
