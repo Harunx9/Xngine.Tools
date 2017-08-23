@@ -17,7 +17,7 @@ namespace Xngine.Tools.Commons.Ioc
             _container = container;
         }
 
-        public IConsoleCommandHandler ResolveCommandHandler(CommandLineArgs args)
+        public IConsoleCommandHandler ResolveCommandHandler(CommandLineParsedArgs args)
         {
             try
             {

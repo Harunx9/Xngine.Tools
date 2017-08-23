@@ -2,7 +2,7 @@
 {
     public interface ICommandResolver
     {
-        IConsoleCommandHandler ResolveCommandHandler(CommandLineArgs args);
+        IConsoleCommandHandler ResolveCommandHandler(CommandLineParsedArgs args);
         T ResolveCommandHandler<T>(string name);
     }
 }

@@ -20,7 +20,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework
             _commandIndexPlacement = commandIndexPlacement;
         }
 
-        public CommandLineArgs Parse(string[] args)
+        public CommandLineParsedArgs Parse(string[] args)
         {
             if (args.Any() == false)
                 throw new EmptyArgsException();
@@ -28,7 +28,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework
             string commandName = ParseCommandName(args);
             Dictionary<string, string> options = ParseCommandOptions(args);
 
-            return new CommandLineArgs(commandName, options);
+            return new CommandLineParsedArgs(commandName, options);
         }
 
         private Dictionary<string, string> ParseCommandOptions(string[] args)

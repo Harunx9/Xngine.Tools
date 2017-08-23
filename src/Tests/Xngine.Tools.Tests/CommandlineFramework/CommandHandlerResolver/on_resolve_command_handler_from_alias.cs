@@ -11,13 +11,13 @@ namespace Xngine.Tools.Tests.CommandlineFramework.CommandResolver
 {
     public class on_resolve_command_handler_from_alias : AAATest
     {
-        private CommandLineArgs args;
+        private CommandLineParsedArgs args;
         private AutofacCommandResolver resolver;
         private IConsoleCommandHandler result;
 
         protected override void Arrange()
         {
-            args = new CommandLineArgs("test",
+            args = new CommandLineParsedArgs("test",
             new Dictionary<string, string>
             {
                 ["option1"] = "23",

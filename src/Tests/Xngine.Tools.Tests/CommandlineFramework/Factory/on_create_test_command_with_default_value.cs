@@ -7,12 +7,12 @@ namespace Xngine.Tools.Tests.CommandlineFramework.Factory
 {
     public class on_create_test_command_with_default_value : AAATest
     {
-        private CommandLineArgs args;
+        private CommandLineParsedArgs args;
         private TestCommand result;
 
         protected override void Arrange()
         {
-            args = new CommandLineArgs("test", new Dictionary<string, string>
+            args = new CommandLineParsedArgs("test", new Dictionary<string, string>
             {
                 ["option2"] = "true",
                 ["option3"] = "bleee"

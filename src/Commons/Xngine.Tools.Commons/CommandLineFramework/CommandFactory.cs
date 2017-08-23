@@ -9,7 +9,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework
 {
     public static class CommandFactory
     {
-        public static T Create<T>(CommandLineArgs args) where T : class, new()
+        public static T Create<T>(CommandLineParsedArgs args) where T : class, new()
         {
             Type[] commands = FindCommand(args);
 
@@ -32,7 +32,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework
             return instance;
         }
 
-        private static void SetPropertyValue<T>(CommandLineArgs args, T instance, PropertyInfo prop, CommandOptionsValueAttribute attribute) where T : class, new()
+        private static void SetPropertyValue<T>(CommandLineParsedArgs args, T instance, PropertyInfo prop, CommandOptionsValueAttribute attribute) where T : class, new()
         {
             var arg = args
                     .CommandOptionsValues
@@ -51,7 +51,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework
                 prop.SetValue(instance, Convert.ChangeType(prop.PropertyType.GetDefaultValue(), prop.PropertyType));
         }
 
-        private static Type[] FindCommand(CommandLineArgs args)
+        private static Type[] FindCommand(CommandLineParsedArgs args)
         {
             return AssemblyFinder
                    .GetCurrentAssemblyWithDependencies()

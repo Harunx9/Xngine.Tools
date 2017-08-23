@@ -7,12 +7,12 @@ namespace Xngine.Tools.Tests.CommandlineFramework.Factory
 {
     class on_create_command_form_with_alias : AAATest
     {
-        private CommandLineArgs args;
+        private CommandLineParsedArgs args;
         private TestCommand result;
 
         protected override void Arrange()
         {
-            args = new CommandLineArgs("test", new Dictionary<string, string>
+            args = new CommandLineParsedArgs("test", new Dictionary<string, string>
             {
                 ["option1"] = "23",
                 ["option2"] = "true",

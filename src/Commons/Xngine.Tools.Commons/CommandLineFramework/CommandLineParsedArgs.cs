@@ -2,12 +2,12 @@
 
 namespace Xngine.Tools.Commons.CommandLineFramework
 {
-    public class CommandLineArgs
+    public class CommandLineParsedArgs
     {
         public string CommandName { get; }
         public Dictionary<string, string> CommandOptionsValues { get; }
 
-        public CommandLineArgs(string commandName, 
+        public CommandLineParsedArgs(string commandName, 
             Dictionary<string, string> commandOptionsValues)
         {
             CommandName = commandName;

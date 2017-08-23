@@ -9,7 +9,7 @@ namespace Xngine.Tools.Tests.CommandlineFramework.Parser
     {
         private string[] args;
         private CommandLineArgsParser parser;
-        private CommandLineArgs result;
+        private CommandLineParsedArgs result;
 
         protected override void Arrange()
         {

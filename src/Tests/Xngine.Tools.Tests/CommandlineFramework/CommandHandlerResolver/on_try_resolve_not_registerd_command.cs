@@ -12,13 +12,13 @@ namespace Xngine.Tools.Tests.CommandlineFramework.CommandResolver
 {
     public class on_try_resolve_not_registerd_command : AAATest
     {
-        private CommandLineArgs args;
+        private CommandLineParsedArgs args;
         private AutofacCommandResolver resolver;
         private Exception exception;
 
         protected override void Arrange()
         {
-            args = new CommandLineArgs("tdes",
+            args = new CommandLineParsedArgs("tdes",
             new Dictionary<string, string>
             {
                 ["option1"] = "23",

@@ -10,12 +10,12 @@ namespace Xngine.Tools.Tests.CommandlineFramework.Factory
 {
     public class on_create_test_command_with_error : AAATest
     {
-        private CommandLineArgs args;
+        private CommandLineParsedArgs args;
         private Exception exception;
 
         protected override void Arrange()
         {
-            args = new CommandLineArgs("test", new Dictionary<string, string>
+            args = new CommandLineParsedArgs("test", new Dictionary<string, string>
             {
                 ["option1"] = "23",
                 ["option3"] = "bleee"
