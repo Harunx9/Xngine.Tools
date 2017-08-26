@@ -13,7 +13,7 @@ namespace Xngine.Tools.Commons.Images
         public int Height => _image.Height;
         public bool IsEmpty => _image.Pixels.IsEmpty;
         public int PixelCount => _image.Pixels.Length;
-        public string Name => System.IO.Path.GetFileName(Path);
+        public string Name => System.IO.Path.GetFileNameWithoutExtension(Path);
 
         public ImageRgba32(string path)
         {

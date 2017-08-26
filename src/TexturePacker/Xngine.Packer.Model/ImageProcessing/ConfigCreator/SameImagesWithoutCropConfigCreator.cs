@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Xngine.Tools.Commons.Images;
 using Xngine.Tools.Commons.Ioc;
 
 namespace Xngine.Packer.Model.ImageProcessing.ConfigCreator
 {
     [Dependency]
-    public class SameImagesWithoutCropConfigCreator : IConfigCreator
+    internal class SameImagesWithoutCropConfigCreator : IConfigCreator
     {
 
         private static readonly int EMPTY_IMAGE_DIMENSION = -1;
@@ -58,6 +60,10 @@ namespace Xngine.Packer.Model.ImageProcessing.ConfigCreator
             int currentX = 0;
             var desctiptors = new List<ImageDescriptor>();
 
+            var name = string.Empty;
+            if (options.SearchName)
+                name = GetName(images, options.NamePattern);
+
             foreach (var image in images)
             {
                 if (currentX + image.Width > sheetWidth)
@@ -70,7 +76,18 @@ namespace Xngine.Packer.Model.ImageProcessing.ConfigCreator
                 currentX += image.Width;
             }
 
-            return new SpriteSheetConfig(options.MarginX, options.MarginY, sheetWidth, sheetHeight, desctiptors);
+            return new SpriteSheetConfig(name, options.MarginX, options.MarginY, sheetWidth, sheetHeight, desctiptors);
+        }
+
+        private string GetName(IEnumerable<IImage> images, string namePattern)
+        {
+            var firstImageName = images.First().Name;
+            var matches = Regex.Match(firstImageName, namePattern);
+            if (matches.Success)
+            {
+                return matches.Groups["sheetname"].Value;
+            }
+            return string.Empty;
         }
     }
 }

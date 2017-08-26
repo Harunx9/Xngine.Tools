@@ -16,7 +16,7 @@ namespace Xngine.Tools.Tests.Image.Merging
 
         protected override void Arrange()
         {
-            options = new MergeOptions(false, 256, 256, 0, 0);
+            options = new MergeOptions(FileNameParsePattern, false, 256, 256, 0, 0, true);
             merger = new ImageMerger(new MergeWithConfigurationAlgorithm(),
                 new IConfigCreator[] { new SameImagesWithoutCropConfigCreator(), new DifferentDimeansionImageWithoutCropConfigCreator() });
         }

@@ -14,7 +14,7 @@ namespace Xngine.Tools.Tests.Image.Merging
 
         protected override void Arrange()
         {
-            options = new MergeOptions(false, 256, 0, 0, 0);
+            options = new MergeOptions(FileNameParsePattern, false, 256, 0, 0, 0, true);
             merger = new ImageMerger(new MergeWithConfigurationAlgorithm(),
               new IConfigCreator[] { new SameImagesWithoutCropConfigCreator(), new DifferentDimeansionImageWithoutCropConfigCreator() });
         }
@@ -27,6 +27,10 @@ namespace Xngine.Tools.Tests.Image.Merging
         [Assert]
         public void configurtion_result_should_not_be_null()
             => result.Should().NotBeNull();
+
+        [Assert]
+        public void configurtion_result_name_should_be_Untitled()
+          => result.Name.Should().Be("Untitled");
 
         [Assert]
         public void configurtion_result_descriptors_should_have_4_elements()
@@ -52,7 +56,7 @@ namespace Xngine.Tools.Tests.Image.Merging
         {
             var desc = result.Descriptors.ElementAt(0);
 
-            desc.Name.Should().Be("Untitled_Fall_0.png");
+            desc.Name.Should().Be("Untitled_Fall_0");
             desc.X.Should().Be(0);
             desc.Y.Should().Be(0);
             desc.Width.Should().Be(32);
@@ -64,7 +68,7 @@ namespace Xngine.Tools.Tests.Image.Merging
         {
             var desc = result.Descriptors.ElementAt(1);
 
-            desc.Name.Should().Be("Untitled_Fall_1.png");
+            desc.Name.Should().Be("Untitled_Fall_1");
             desc.X.Should().Be(32);
             desc.Y.Should().Be(0);
             desc.Width.Should().Be(32);
@@ -76,7 +80,7 @@ namespace Xngine.Tools.Tests.Image.Merging
         {
             var desc = result.Descriptors.ElementAt(2);
 
-            desc.Name.Should().Be("Untitled_Fall_2.png");
+            desc.Name.Should().Be("Untitled_Fall_2");
             desc.X.Should().Be(64);
             desc.Y.Should().Be(0);
             desc.Width.Should().Be(32);
@@ -88,7 +92,7 @@ namespace Xngine.Tools.Tests.Image.Merging
         {
             var desc = result.Descriptors.ElementAt(3);
 
-            desc.Name.Should().Be("Untitled_Fall_3.png");
+            desc.Name.Should().Be("Untitled_Fall_3");
             desc.X.Should().Be(96);
             desc.Y.Should().Be(0);
             desc.Width.Should().Be(32);

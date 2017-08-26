@@ -10,7 +10,7 @@ namespace Xngine.Tools.Commons.Images
     {
         private readonly Image<Rgba64> _image;
         public string Path { get; private set; }
-        public string Name => System.IO.Path.GetFileName(Path);
+        public string Name => System.IO.Path.GetFileNameWithoutExtension(Path);
         public int Width => _image.Width;
         public int Height => _image.Height;
         public bool IsEmpty => _image.Pixels.IsEmpty;

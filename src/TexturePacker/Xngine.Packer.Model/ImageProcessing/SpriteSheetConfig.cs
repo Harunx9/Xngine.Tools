@@ -11,10 +11,12 @@ namespace Xngine.Packer.Model.ImageProcessing
         public int Width { get; }
         public int Height { get; }
         public IEnumerable<ImageDescriptor> Descriptors { get; }
+        public string Name { get; }
 
-        public SpriteSheetConfig(int offsetX, int offsetY, int width, int height,
+        public SpriteSheetConfig(string name, int offsetX, int offsetY, int width, int height,
             IEnumerable<ImageDescriptor> descriptors)
         {
+            Name = name;
             OffsetX = offsetX;
             OffsetY = offsetY;
             Width = width;
@@ -32,15 +34,15 @@ namespace Xngine.Packer.Model.ImageProcessing
     {
         public TImage Image { get; }
 
-        public SpriteSheetConfig(int offsetX, int offsetY, int width, int height,
+        public SpriteSheetConfig(string name, int offsetX, int offsetY, int width, int height,
             IEnumerable<ImageDescriptor> descriptors, TImage image) :
-            base(offsetX, offsetY, width, height, descriptors)
+            base(name, offsetX, offsetY, width, height, descriptors)
         {
             Image = image;
         }
 
         public SpriteSheetConfig(SpriteSheetConfig other, TImage image) :
-            base(other.OffsetX, other.OffsetY, other.Width, other.Height, other.Descriptors.ToArray())
+            base(other.Name, other.OffsetX, other.OffsetY, other.Width, other.Height, other.Descriptors.ToArray())
         {
             Image = image;
         }

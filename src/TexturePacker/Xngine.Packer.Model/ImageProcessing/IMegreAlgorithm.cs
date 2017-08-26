@@ -10,7 +10,7 @@ namespace Xngine.Packer.Model.ImageProcessing
     }
 
     [Dependency]
-    public class MergeWithConfigurationAlgorithm : IMegreWithConfigAlgorithm
+    internal class MergeWithConfigurationAlgorithm : IMegreWithConfigAlgorithm
     {
         public TImage Merge<TImage>(SpriteSheetConfig config, IEnumerable<TImage> images) where TImage : class, IImage
         {

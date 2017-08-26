@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 using Xngine.Packer.Model.ImageProcessing;
 
@@ -26,15 +28,51 @@ namespace Xngine.Packer.Model.SerializableEntities
         [XmlElement("animation")]
         public List<Animation> Animations { get; set; }
 
+
         public AnitationSpriteSheet()
         {
             Animations = new List<Animation>();
         }
 
+
         public AnitationSpriteSheet Add(Animation animation)
         {
             Animations.Add(animation);
             return this;
+        }
+
+        public static AnitationSpriteSheet Create<T>(SpriteSheetConfig<T> spriteSheetConfig, string namePattern)
+        {
+            var sheet = new AnitationSpriteSheet();
+
+            foreach (var descriptor in spriteSheetConfig.Descriptors)
+            {
+                var mathes = Regex.Match(descriptor.Name, namePattern);
+
+                var animationName = mathes.Groups["animationname"];
+                var animation = sheet.Animations.First(x => x.Name == animationName.Value);
+                if (animation != null)
+                {
+                    AddFrame(spriteSheetConfig, descriptor, mathes, animation);
+                }
+                else
+                {
+                    animation = new Animation(animationName.Value, 4);
+                    AddFrame(spriteSheetConfig, descriptor, mathes, animation);
+                    sheet.Add(animation);
+                }
+            }
+
+            return sheet;
+        }
+
+        private static void AddFrame<T>(SpriteSheetConfig<T> spriteSheetConfig, ImageDescriptor descriptor, Match mathes, Animation animation)
+        {
+            var frameNumber = mathes.Groups["framenumber"];
+            animation.Add(new Frame(int.Parse(frameNumber.Value),
+                descriptor.X, descriptor.Y, descriptor.Width,
+                descriptor.Height, spriteSheetConfig.OffsetX,
+                spriteSheetConfig.OffsetY));
         }
     }
 

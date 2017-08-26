@@ -2,19 +2,29 @@
 {
     public class MergeOptions
     {
-        public bool Crop { get; private set; }
-        public int MaxWidth { get; private set; }
-        public int MaxHeight { get; private set; }
-        public int MarginX { get; private set; }
-        public int MarginY { get; private set; }
+        public bool Crop { get;  }
+        public int MaxWidth { get; }
+        public int MaxHeight { get;  }
+        public int MarginX { get;  }
+        public int MarginY { get; }
+        public string NamePattern { get; }
+        public bool SearchName { get; }
 
-        public MergeOptions(bool crop, int maxWidth, int maxHeight, int marginX, int marginY)
+        public MergeOptions(string namePattern,
+            bool crop,
+            int maxWidth,
+            int maxHeight,
+            int marginX,
+            int marginY,
+            bool searchName)
         {
+            NamePattern = namePattern;
             Crop = crop;
             MaxWidth = maxWidth;
             MaxHeight = maxHeight;
             MarginX = marginX;
             MarginY = marginY;
+            SearchName = searchName;
         }
     }
 }
