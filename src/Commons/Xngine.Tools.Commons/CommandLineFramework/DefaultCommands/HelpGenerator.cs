@@ -12,7 +12,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework.DefaultCommands
         StringBuilder GenerateForProgram();
         StringBuilder GenerateForCommand(string commandName);
     }
-    
+
     [Dependency]
     public class HelpGenerator : IHelpGenerator
     {
@@ -41,7 +41,7 @@ namespace Xngine.Tools.Commons.CommandLineFramework.DefaultCommands
             var commands = AssemblyFinder.GetCurrentAssemblyWithDependencies()
                 .SelectMany(x => x.GetTypes()
                 .Where(t => t.GetTypeInfo().GetCustomAttribute<CommandAttribute>() != null &&
-                (t.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Name == commandName || 
+                (t.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Name == commandName ||
                 t.GetTypeInfo().GetCustomAttribute<CommandAttribute>().Alias == commandName)));
 
             if (commands.Any() == false)
@@ -73,6 +73,6 @@ namespace Xngine.Tools.Commons.CommandLineFramework.DefaultCommands
 
             return helpBuilder;
         }
-        
+
     }
 }

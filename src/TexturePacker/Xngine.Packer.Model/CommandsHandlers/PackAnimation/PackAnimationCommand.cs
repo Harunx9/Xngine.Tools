@@ -23,9 +23,9 @@ namespace Xngine.Packer.Model.CommandsHandlers.PackAnimation
             DefaultValue = @"(?<sheetname>[A-Za-z]+)_(?<animationname>[A-Za-z]+)_(?<framenumber>[0-9]+)")]
         public string InputFileParsingPattern { get; set; }
 
-        [CommandOptionsValue("name", 
-            Alias ="n", 
-            HelpText ="Name of packed animation")]
+        [CommandOptionsValue("name",
+            Alias = "n",
+            HelpText = "Name of packed animation")]
         public string PackedName { get; set; }
 
         [CommandOptionsValue("max_width",
@@ -41,7 +41,7 @@ namespace Xngine.Packer.Model.CommandsHandlers.PackAnimation
         public int MaxHeight { get; set; }
 
         [CommandOptionsValue("img_ext",
-            Alias ="ie",
+            Alias = "ie",
             HelpText = "Image extension default is '.png'",
             DefaultValue = ".png")]
         public string ImageFileExtension { get; set; }

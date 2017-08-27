@@ -36,7 +36,5 @@ namespace Xngine.Packer.Model.ImageProcessing
             }
             return true;
         }
-
-        
     }
 }

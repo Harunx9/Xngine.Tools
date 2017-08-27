@@ -2,10 +2,10 @@
 {
     public sealed class MergeOptions
     {
-        public bool Crop { get;  }
+        public bool Crop { get; }
         public int MaxWidth { get; }
-        public int MaxHeight { get;  }
-        public int MarginX { get;  }
+        public int MaxHeight { get; }
+        public int MarginX { get; }
         public int MarginY { get; }
         public string NamePattern { get; }
         public bool SearchName { get; }

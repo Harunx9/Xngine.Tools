@@ -3,7 +3,7 @@
 namespace Xngine.Tools.Commons.Ioc
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
-    public sealed class DependencyAttribute : Attribute{}
+    public sealed class DependencyAttribute : Attribute { }
 
     [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public sealed class NamedDependencyAttribute : Attribute

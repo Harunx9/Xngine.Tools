@@ -6,7 +6,7 @@ using Xngine.Tools.Commons.Exceptions;
 
 namespace Xngine.Tools.Commons.Images
 {
-    public class ImageRgba64 : IImage,  IDisposable
+    public class ImageRgba64 : IImage, IDisposable
     {
         private readonly Image<Rgba64> _image;
         public string Path { get; private set; }

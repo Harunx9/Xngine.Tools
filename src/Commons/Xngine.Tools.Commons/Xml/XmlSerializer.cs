@@ -50,7 +50,7 @@ namespace Xngine.Tools.Commons.Xml
             var namespaces = new XmlSerializerNamespaces();
             namespaces.Add("", "");
 
-            var xmlWriterSettings = new XmlWriterSettings() { Indent = true, IndentChars= "  " };
+            var xmlWriterSettings = new XmlWriterSettings() { Indent = true, IndentChars = "  " };
 
             var builder = new StringBuilder();
             using (var writer = XmlWriter.Create(builder, xmlWriterSettings))

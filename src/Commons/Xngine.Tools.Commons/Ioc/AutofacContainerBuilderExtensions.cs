@@ -19,7 +19,7 @@ namespace Xngine.Tools.Commons.Ioc
                 foreach (var typeToRegister in typesToRegiser)
                 {
                     var dependecyAttribute = typeToRegister.GetTypeInfo().GetCustomAttribute<DependencyAttribute>();
-                        builder.RegisterType(typeToRegister).AsImplementedInterfaces();
+                    builder.RegisterType(typeToRegister).AsImplementedInterfaces();
                 }
             }
         }

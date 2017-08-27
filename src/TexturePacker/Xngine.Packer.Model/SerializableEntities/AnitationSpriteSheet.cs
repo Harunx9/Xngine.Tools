@@ -87,7 +87,7 @@ namespace Xngine.Packer.Model.SerializableEntities
         [XmlAttribute("framesPerSecond")]
         public int FramesPerSecond { get; set; }
 
-        private Animation(){}
+        private Animation() { }
 
         public Animation(string name, int framesPerSecond)
         {
@@ -103,7 +103,7 @@ namespace Xngine.Packer.Model.SerializableEntities
         }
     }
 
-    public class Frame 
+    public class Frame
     {
         [XmlAttribute("number")]
         public int Number { get; set; }
@@ -126,7 +126,7 @@ namespace Xngine.Packer.Model.SerializableEntities
         [XmlAttribute("offsety")]
         public int OffsetY { get; set; }
 
-        private Frame(){}
+        private Frame() { }
 
         public Frame(int number, int x, int y, int width, int height, int offsetX, int offsetY)
         {
