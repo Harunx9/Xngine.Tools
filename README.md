@@ -7,13 +7,8 @@ For now this is one repository but in the future this may change. I want to impl
 [.net core](https://github.com/dotnet/core) to make them available on all operating systems.
 Stay tuned for future updates.
 
-Todo:
-- Project generator
-
-In Progress:
-- Texture packer cli
-
-Done:
-- Nothing :P
-
+Projects:
+- 2DXngine generator - not started
+- Textrure packer - MVP now pack only same sprites for animation test purpose
+- Asset packer - idea not started
 
