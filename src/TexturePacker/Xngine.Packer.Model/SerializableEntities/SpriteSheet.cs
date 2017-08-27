@@ -32,6 +32,21 @@ namespace Xngine.Packer.Model.SerializableEntities
             Items.Add(item);
             return this;
         }
+
+        public static SpriteSheet Create<T>(SpriteSheetConfig<T> spriteSheetConfig)
+        {
+            var sheet = new SpriteSheet();
+
+            foreach (var descriptor in spriteSheetConfig.Descriptors)
+            {
+                sheet.Add(new Item(descriptor.Name,
+                    descriptor.X, descriptor.Y,
+                    descriptor.Width, descriptor.Height,
+                    spriteSheetConfig.OffsetX, spriteSheetConfig.OffsetY));
+            }
+
+            return sheet;
+        }
     }
 
     public class Item
@@ -58,9 +73,11 @@ namespace Xngine.Packer.Model.SerializableEntities
         public int OffsetY { get; set; }
 
         private Item() { }
-    
-        public Item(string name, int x, int y, int width,
-            int height, int offsetX, int offsetY)
+
+        public Item(string name,
+            int x, int y,
+            int width, int height,
+            int offsetX, int offsetY)
         {
             Name = name;
             X = x;

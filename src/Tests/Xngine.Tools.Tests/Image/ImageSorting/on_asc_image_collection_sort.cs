@@ -12,9 +12,11 @@ namespace Xngine.Tools.Tests.Image.ImageSorting
 
         protected override void Arrange()
         {
-            imageList = new List<ImageRgba32>();
-            imageList.Add(new ImageRgba32(TilesImagePath));
-            imageList.Add(new ImageRgba32(MeticsImagePath));
+            imageList = new List<ImageRgba32>
+            {
+                new ImageRgba32(TilesImagePath),
+                new ImageRgba32(MeticsImagePath)
+            };
 
             sorter = new ImageSorter();
         }

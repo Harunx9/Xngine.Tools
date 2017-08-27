@@ -1,9 +1,9 @@
 ﻿using Xngine.Tools.Commons.CommandLineFramework.Attributes;
 
-namespace Xngine.Packer.Model.CommandsHandlers.PackAnimation
+namespace Xngine.Packer.Model.CommandsHandlers.PackSpritesheet
 {
-    [Command("packanimation", Alias = "pa", HelpText = "Pack texture from input dir as Animation Spritesheet")]
-    public sealed class PackAnimationCommand
+    [Command("packspritesheet", Alias = "ps", HelpText = "Pack texture from input dir as Spritesheet")]
+    public sealed class PackSpritesheetCommand
     {
         [CommandOptionsValue("input",
             Alias = "in",
@@ -16,12 +16,6 @@ namespace Xngine.Packer.Model.CommandsHandlers.PackAnimation
             Required = true,
             HelpText = "Input output directory")]
         public string OutputDirectory { get; set; }
-
-        [CommandOptionsValue("pattern",
-            Alias = "p",
-            HelpText = "Regexp pattern for automatic nameing default is sheetname_animationname_framenumber",
-            DefaultValue = @"(?<sheetname>[A-Za-z]+)_(?<animationname>[A-Za-z]+)_(?<framenumber>[0-9]+)")]
-        public string InputFileParsingPattern { get; set; }
 
         [CommandOptionsValue("name", 
             Alias ="n", 
