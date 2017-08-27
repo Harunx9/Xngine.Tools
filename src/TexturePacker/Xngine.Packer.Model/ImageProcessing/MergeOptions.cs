@@ -1,6 +1,6 @@
 ﻿namespace Xngine.Packer.Model.ImageProcessing
 {
-    public class MergeOptions
+    public sealed class MergeOptions
     {
         public bool Crop { get;  }
         public int MaxWidth { get; }

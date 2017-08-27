@@ -15,7 +15,7 @@ namespace Xngine.Packer.Model.ImageProcessing
     }
 
     [Dependency]
-    internal class ImageMerger : IImageMerger
+    internal sealed class ImageMerger : IImageMerger
     {
         private readonly IMegreWithConfigAlgorithm _configMergeAlgorithm;
         private readonly IEnumerable<IConfigCreator> _configCreators;

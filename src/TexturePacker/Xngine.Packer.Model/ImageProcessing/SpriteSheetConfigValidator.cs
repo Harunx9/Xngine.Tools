@@ -3,7 +3,7 @@ using Xngine.Tools.Commons.Ioc;
 
 namespace Xngine.Packer.Model.ImageProcessing
 {
-    internal class SpriteSheetConfigValidator
+    internal sealed class SpriteSheetConfigValidator
     {
         private readonly string _pattern;
 

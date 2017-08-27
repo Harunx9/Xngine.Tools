@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Xngine.Packer.Model.CommandsHandlers.Exceptions;
 using Xngine.Packer.Model.ImageProcessing;
 using Xngine.Packer.Model.SerializableEntities;
@@ -9,10 +8,10 @@ using Xngine.Tools.Commons.Images;
 using Xngine.Tools.Commons.Time;
 using Xngine.Tools.Commons.Xml;
 
-namespace Xngine.Packer.Model.CommandsHandlers
+namespace Xngine.Packer.Model.CommandsHandlers.PackAnimation
 {
     [CommandHandler("packanimation")]
-    public class PackAnimationCommandHandler : ConsoleCommandHandler<PackAnimationCommand>
+    public sealed class PackAnimationCommandHandler : ConsoleCommandHandler<PackAnimationCommand>
     {
         private readonly IImageMerger _merger;
         private readonly IXmlSerializer _serializer;

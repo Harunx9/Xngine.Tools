@@ -10,7 +10,7 @@ namespace Xngine.Packer.Model.ImageProcessing.ConfigCreator
     {
         public bool CanCreate(IEnumerable<IImage> images, MergeOptions options)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public SpriteSheetConfig Create(IEnumerable<IImage> images, MergeOptions options)

@@ -50,7 +50,7 @@ namespace Xngine.Packer.Model.SerializableEntities
                 var mathes = Regex.Match(descriptor.Name, namePattern);
 
                 var animationName = mathes.Groups["animationname"];
-                var animation = sheet.Animations.First(x => x.Name == animationName.Value);
+                var animation = sheet.Animations.FirstOrDefault(x => x.Name == animationName.Value);
                 if (animation != null)
                 {
                     AddFrame(spriteSheetConfig, descriptor, mathes, animation);

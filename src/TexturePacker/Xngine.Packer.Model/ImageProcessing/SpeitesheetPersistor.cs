@@ -10,10 +10,13 @@ namespace Xngine.Packer.Model.ImageProcessing
     }
 
     [Dependency]
-    internal class SpeitesheetPersistor : ISpeitesheetPersistor
+    internal sealed class SpeitesheetPersistor : ISpeitesheetPersistor
     {
         public void Save(string xml, IImage image, string outputDirectory, string animationName, string imageExt)
         {
+            if (Directory.Exists(outputDirectory) == false)
+                Directory.CreateDirectory(outputDirectory);
+
             var path = Path.Combine(outputDirectory, animationName);
             File.WriteAllText($"{path}.xml", xml);
             image.Save($"{path}.{imageExt}");

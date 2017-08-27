@@ -1,9 +1,9 @@
 ﻿using Xngine.Tools.Commons.CommandLineFramework.Attributes;
 
-namespace Xngine.Packer.Model.CommandsHandlers
+namespace Xngine.Packer.Model.CommandsHandlers.PackAnimation
 {
     [Command("packanimation", Alias = "pa", HelpText = "Pack texture from input dir ")]
-    public class PackAnimationCommand
+    public sealed class PackAnimationCommand
     {
         [CommandOptionsValue("input",
             Alias = "in",

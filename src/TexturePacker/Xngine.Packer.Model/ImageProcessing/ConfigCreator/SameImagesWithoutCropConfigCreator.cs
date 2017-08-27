@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Xngine.Tools.Commons.Images;
@@ -8,7 +7,7 @@ using Xngine.Tools.Commons.Ioc;
 namespace Xngine.Packer.Model.ImageProcessing.ConfigCreator
 {
     [Dependency]
-    internal class SameImagesWithoutCropConfigCreator : IConfigCreator
+    internal sealed class SameImagesWithoutCropConfigCreator : IConfigCreator
     {
 
         private static readonly int EMPTY_IMAGE_DIMENSION = -1;
